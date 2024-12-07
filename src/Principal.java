@@ -12,7 +12,7 @@ public class Principal {
 
         try (Scanner scanner = new Scanner(System.in)) {
             ConversorMoneda conversor = new ConversorMoneda();
-            // Obtener todas las tasas de conversión desde una moneda base (por ejemplo, USD)
+            // Obtener todas las tasas de conversión desde una moneda base (USD)
             System.out.println("Cargando tasas de conversión...");
             Moneda monedaBase = conversor.buscarMoneda("USD");
             System.out.println("Tasas de conversión cargadas exitosamente.\n");
