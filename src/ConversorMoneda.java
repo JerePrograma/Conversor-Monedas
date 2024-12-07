@@ -4,6 +4,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ConversorMoneda {
@@ -61,4 +63,9 @@ public class ConversorMoneda {
         // Calcular el monto convertido
         return ((monto / tasaOrigen) * tasaDestino);
     }
+
+    public List<String> obtenerMonedasDisponibles(Moneda monedaBase) {
+        return new ArrayList<>(monedaBase.conversion_rates().keySet());
+    }
+
 }

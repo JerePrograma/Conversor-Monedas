@@ -3,12 +3,15 @@ import com.google.gson.GsonBuilder;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 public class GeneradorDeArchivo {
-    public void guardarJson(Moneda moneda) throws IOException {
+
+    public void guardarHistorial(List<String> historial) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//        FileWriter escritura = new FileWriter(moneda.title()+".json");
-  //      escritura.write(gson.toJson(moneda));
-    //    escritura.close();
+        FileWriter escritura = new FileWriter("historial_conversiones.json");
+        escritura.write(gson.toJson(historial));
+        escritura.close();
     }
+
 }
